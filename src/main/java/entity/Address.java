@@ -22,6 +22,17 @@ public class Address {
     @Column(name = "city")
     private String city;
 
+    public Address() {
+    }
+
+    public Address(int addressId, String streetName, Integer streetNumber, String postalNumber, String city) {
+        this.addressId = addressId;
+        this.streetName = streetName;
+        this.streetNumber = streetNumber;
+        this.postalNumber = postalNumber;
+        this.city = city;
+    }
+
     public int getAddressId() {
         return addressId;
     }
