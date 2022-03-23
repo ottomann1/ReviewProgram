@@ -22,6 +22,22 @@ public class Review {
     @Column(name = "text")
     private String text;
 
+    public Review() {
+    }
+
+    public Review(Integer stars, String text) {
+        this.stars = stars;
+        this.text = text;
+    }
+
+    public Review(int reviewId, int customerId, int restaurantId, Integer stars, String text) {
+        this.reviewId = reviewId;
+        this.customerId = customerId;
+        this.restaurantId = restaurantId;
+        this.stars = stars;
+        this.text = text;
+    }
+
     public int getReviewId() {
         return reviewId;
     }
