@@ -1,29 +1,53 @@
 package com.fyra.reviewprogram;
 
+import com.fyra.reviewprogram.database.CustomerDAO;
+import entity.Customer;
+import entity.Review;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainMenuController {
-    @FXML
-    private Button knapp;
 
     @FXML
-    private TextField textRuta;
+    private Button restaurantButton;
 
     @FXML
-    void initialize(){
-        Person person = new Person();
-        person.setName("Otto Kostmann");
-        textRuta.setText(person.getName());
+    private ListView<Customer> reviewBox;
+
+    @FXML
+    private ListView<Review> reviewsListView;
+
+    @FXML
+    void initialize() throws IOException, ClassNotFoundException {
+        CustomerDAO customerDAO = new CustomerDAO();
+        Customer customer = new Customer("Otto", "Kostmann", "123456", "otto.kostmann@hot");
+        Customer customer2 = new Customer("aaaa", "Kostmann", "123456", "otto.kostmann@hot");
+        customerDAO.create(customer);
+        customerDAO.create(customer2);
+        List<Customer> xxx = new ArrayList<Customer>();
+        xxx.addAll(customerDAO.readAll());
+        ObservableList<Customer> observableReviews = FXCollections.observableArrayList(xxx);
+        reviewBox.setItems(observableReviews);
+
     }
 
     @FXML
-    void knappKlick(ActionEvent event) {
-        Person person = new Person();
-        person.setName("Otto Kostmann");
-        String x = textRuta.getText();
-        textRuta.setText(x+=person.getName());
+    void restaurantButtonClick(ActionEvent event) throws IOException, ClassNotFoundException {
+        Customer chosenCustomer = reviewBox.getSelectionModel().getSelectedItem();
+        reviewsListView.setVisible(true);
+        List<Review> reviewList = new ArrayList<Review>();
+        reviewList.addAll(reviewDAO.readAllFrom(reviewBox.getSelectionModel().getSelectedItem()));
+        ObservableList<Review> observableReviewList = FXCollections.observableArrayList(reviewList);
+        reviewsListView.setItems(observableReviewList);
+
     }
 }
