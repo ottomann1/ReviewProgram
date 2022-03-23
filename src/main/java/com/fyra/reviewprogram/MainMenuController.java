@@ -9,7 +9,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -48,7 +47,7 @@ public class MainMenuController {
         reviewsListView.setVisible(true);
         List<Review> reviewList = new ArrayList<Review>();
         reviewList.addAll(reviewDAO.readAllFrom(reviewBox.getSelectionModel().getSelectedItem()));
-        ObservableList<Review> observableReviewList = FXCollections.observableArrayList(reviewList);
+        ObservableList<Review> observableReviewList = (ObservableList<Review>) FXCollections.observableArrayList(reviewList);
         reviewsListView.setItems(observableReviewList);
 
     }
