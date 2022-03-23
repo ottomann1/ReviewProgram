@@ -20,11 +20,11 @@ public class RestaurantDAO implements DAO {
     @Override
     public List readAll() throws IOException, ClassNotFoundException {
         Data data = new Data();
-        List<Object[]> restaurantObjects = data.getDataListQuery("SELECT * FROM review");
+        List<Object[]> restaurantObjects = data.getDataListQuery("SELECT * FROM restaurant");
         List<Restaurant> restaurants = new ArrayList<Restaurant>();
         for (Object[] o : restaurantObjects) {
-            Restaurant review = new Restaurant((Integer) o[0], (String) o[1], (Integer) o[2], (Integer) o[3], o[4].toString());
-            restaurant.add(restaurant);
+            Restaurant restaurant = new Restaurant((Integer) o[0], o[1].toString(), (Integer) o[2], o[3].toString());
+            restaurants.add(restaurant);
         }
         return restaurants;
     }

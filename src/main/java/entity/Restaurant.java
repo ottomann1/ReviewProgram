@@ -19,6 +19,16 @@ public class Restaurant {
     @Column(name = "description")
     private String description;
 
+    public Restaurant() {
+    }
+
+    public Restaurant(int restaurantId, String name, Integer addressId, String description) {
+        this.restaurantId = restaurantId;
+        this.name = name;
+        this.addressId = addressId;
+        this.description = description;
+    }
+
     public int getRestaurantId() {
         return restaurantId;
     }
