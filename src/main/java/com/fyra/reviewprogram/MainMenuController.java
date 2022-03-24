@@ -73,7 +73,7 @@ public class MainMenuController {
     private TextField phoneNumberTextField;
 
     @FXML
-    private Text restaurantNameText;
+    private Label restaurantNameText;
 
     @FXML
     private ListView<Restaurant> reviewBox;
@@ -85,7 +85,7 @@ public class MainMenuController {
     private TextField reviewTextField;
 
     @FXML
-    private Text reviewsForText;
+    private Label reviewsForText;
 
     @FXML
     private ListView<Review> reviewsListView;
@@ -202,6 +202,7 @@ public class MainMenuController {
     void restaurantButtonClick(ActionEvent event) throws IOException, ClassNotFoundException {
         ReviewDAO reviewDAO = new ReviewDAO();
         currentRestaurant = reviewBox.getSelectionModel().getSelectedItem();
+        reviewsForText.setText("Reviews for "+reviewBox.getSelectionModel().getSelectedItem().getName());
         reviewPane.setVisible(true);
         createReviewPane.setVisible(false);
         createCustomerPane.setVisible(false);
