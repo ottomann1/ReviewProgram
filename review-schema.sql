@@ -22,9 +22,9 @@ city varchar(50)
 
 CREATE TABLE restaurant(
 restaurant_id int NOT NULL PRIMARY KEY,
-name varchar(50),
+restaurantName varchar(50),
 address_id int,
-description varchar(255),
+restaurantDescription varchar(255),
 FOREIGN KEY(address_id) REFERENCES address(address_id)
 );
 
@@ -33,7 +33,7 @@ review_id int NOT NULL PRIMARY KEY,
 customer_id int NOT NULL,
 restaurant_id int NOT NULL,
 stars int,
-text text,
+reviewText text,
 FOREIGN KEY(customer_id) REFERENCES customer(customer_id),
 FOREIGN KEY(restaurant_id) REFERENCES restaurant(restaurant_id)
 );
