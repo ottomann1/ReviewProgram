@@ -10,23 +10,23 @@ public class Restaurant {
     @Column(name = "restaurant_id")
     private int restaurantId;
     @Basic
-    @Column(name = "name")
-    private String name;
+    @Column(name = "restaurantName")
+    private String restaurantName;
     @Basic
     @Column(name = "address_id")
     private Integer addressId;
     @Basic
-    @Column(name = "description")
-    private String description;
+    @Column(name = "restaurantDescription")
+    private String restaurantDescription;
 
     public Restaurant() {
     }
 
-    public Restaurant(int restaurantId, String name, Integer addressId, String description) {
+    public Restaurant(int restaurantId, String restaurantName, Integer addressId, String restaurantDescription) {
         this.restaurantId = restaurantId;
-        this.name = name;
+        this.restaurantName = restaurantName;
         this.addressId = addressId;
-        this.description = description;
+        this.restaurantDescription = restaurantDescription;
     }
 
     public int getRestaurantId() {
@@ -38,11 +38,11 @@ public class Restaurant {
     }
 
     public String getName() {
-        return name;
+        return restaurantName;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.restaurantName = restaurantName;
     }
 
     public Integer getAddressId() {
@@ -54,11 +54,11 @@ public class Restaurant {
     }
 
     public String getDescription() {
-        return description;
+        return restaurantDescription;
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        this.restaurantDescription = restaurantDescription;
     }
 
     @Override
@@ -66,11 +66,11 @@ public class Restaurant {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Restaurant that = (Restaurant) o;
-        return restaurantId == that.restaurantId && Objects.equals(name, that.name) && Objects.equals(addressId, that.addressId) && Objects.equals(description, that.description);
+        return restaurantId == that.restaurantId && Objects.equals(restaurantName, that.restaurantName) && Objects.equals(addressId, that.addressId) && Objects.equals(restaurantDescription, that.restaurantDescription);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(restaurantId, name, addressId, description);
+        return Objects.hash(restaurantId, restaurantName, addressId, restaurantDescription);
     }
 }

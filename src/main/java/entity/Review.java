@@ -19,15 +19,15 @@ public class Review {
     @Column(name = "stars")
     private Integer stars;
     @Basic
-    @Column(name = "text")
-    private String text;
+    @Column(name = "reviewText")
+    private String reviewText;
 
     public Review() {
     }
 
     public Review(Integer stars, String text) {
         this.stars = stars;
-        this.text = text;
+        this.reviewText = text;
     }
 
     public Review(int reviewId, int customerId, int restaurantId, Integer stars, String text) {
@@ -35,7 +35,7 @@ public class Review {
         this.customerId = customerId;
         this.restaurantId = restaurantId;
         this.stars = stars;
-        this.text = text;
+        this.reviewText = text;
     }
 
     public int getReviewId() {
@@ -71,11 +71,11 @@ public class Review {
     }
 
     public String getText() {
-        return text;
+        return reviewText;
     }
 
     public void setText(String text) {
-        this.text = text;
+        this.reviewText = text;
     }
 
     @Override
@@ -83,11 +83,11 @@ public class Review {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Review review = (Review) o;
-        return reviewId == review.reviewId && customerId == review.customerId && restaurantId == review.restaurantId && Objects.equals(stars, review.stars) && Objects.equals(text, review.text);
+        return reviewId == review.reviewId && customerId == review.customerId && restaurantId == review.restaurantId && Objects.equals(stars, review.stars) && Objects.equals(reviewText, review.reviewText);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(reviewId, customerId, restaurantId, stars, text);
+        return Objects.hash(reviewId, customerId, restaurantId, stars, reviewText);
     }
 }
