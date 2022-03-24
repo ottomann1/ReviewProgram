@@ -27,3 +27,5 @@ replay_pid*
 # IntelliJ-related
 /*.iml
 /.idea/
+
+src/main/resources/META-INF
