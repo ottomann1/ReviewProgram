@@ -1,5 +1,6 @@
 package com.fyra.reviewprogram.database;
 
+import entity.Restaurant;
 import entity.Review;
 
 import java.io.IOException;
@@ -45,6 +46,19 @@ public class ReviewDAO implements DAO{
     Review x = (Review) o;
         data.deleteEm(Review.class, x.getReviewId());
     }
+    @Override
+    public List readAllFrom(Restaurant restaurant) throws IOException, ClassNotFoundException {
+        Data data = new Data();
+        List<Object[]> reviewObjects = data.getDataListQuery("SELECT * FROM review WHERE restaurant_id = "+restaurant.getRestaurantId());
+        List<Review> reviews = new ArrayList<Review>();
+        for (Object[] o : reviewObjects) {
+            Review review = new Review((Integer) o[0], (Integer) o[1], (Integer) o[2], (Integer) o[3], o[4].toString());
+            reviews.add(review);
+        }
+        return reviews;
+    }
+
+
 
     @Override
     public void deleteAll() throws IOException {
