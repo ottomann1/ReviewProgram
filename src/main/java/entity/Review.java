@@ -27,6 +27,16 @@ public class Review {
         return stars +" Stars - "+ reviewText;
     }
 
+    public String toStringHeavy() {
+        return "Review{" +
+                "reviewId=" + reviewId +
+                ", customerId=" + customerId +
+                ", restaurantId=" + restaurantId +
+                ", stars=" + stars +
+                ", reviewText='" + reviewText + '\'' +
+                '}';
+    }
+
     public Review() {
     }
 
