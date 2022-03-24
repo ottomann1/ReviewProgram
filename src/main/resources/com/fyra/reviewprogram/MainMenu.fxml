@@ -18,7 +18,7 @@
       <ListView fx:id="reviewBox" layoutX="22.0" layoutY="68.0" prefHeight="519.0" prefWidth="228.0" style="-fx-background-color: #00FF80;" />
       <Text layoutX="22.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Restaurants" textAlignment="CENTER" wrappingWidth="228.0">
          <font>
-            <Font size="43.0" />
+            <Font name="Jokerman" size="38.0" />
          </font>
       </Text>
       <Pane fx:id="reviewPane" focusTraversable="true" layoutX="252.0" layoutY="-6.0" prefHeight="630.0" prefWidth="606.0" style="-fx-background-color: #00F7FF;" visible="false">
