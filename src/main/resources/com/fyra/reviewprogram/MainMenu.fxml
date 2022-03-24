@@ -54,7 +54,7 @@
                   <Font size="19.0" />
                </font>
             </Text>
-            <Button layoutX="154.0" layoutY="476.0" mnemonicParsing="false" onAction="#createCustomerClick" prefHeight="25.0" prefWidth="412.0" style="-fx-background-color: #17FF00;" text="Create customer" />
+            <Button layoutX="154.0" layoutY="476.0" mnemonicParsing="false" onAction="#createCustomerPaneClick" prefHeight="25.0" prefWidth="412.0" style="-fx-background-color: #17FF00;" text="Create customer" />
          </children>
       </Pane>
       <Pane fx:id="createCustomerPane" layoutX="252.0" prefHeight="621.0" prefWidth="606.0" style="-fx-background-color: #2E00FF;" visible="false">

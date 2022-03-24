@@ -1,5 +1,6 @@
 package com.fyra.reviewprogram;
 
+import com.fyra.reviewprogram.database.CustomerDAO;
 import com.fyra.reviewprogram.database.RestaurantDAO;
 import com.fyra.reviewprogram.database.ReviewDAO;
 import entity.Restaurant;
@@ -27,7 +28,7 @@ public class MainMenuController {
     private Pane createReviewPane;
 
     @FXML
-    private ComboBox<?> customerDropdown;
+    private ComboBox<Restaurant> customerDropdown;
 
     @FXML
     private TextField emailAddressTextField;
@@ -92,14 +93,27 @@ public class MainMenuController {
     @FXML
     private CheckBox twoStar;
 
+    private Restaurant currentRestaurant;
+    @FXML
+    void createCustomerPaneClick(ActionEvent event) {
+        createCustomerPane.setVisible(true);
+        createReviewPane.setVisible(false);
+    }
+
     @FXML
     void createCustomerClick(ActionEvent event) {
 
     }
 
-    @FXML
-    void createReviewButtonClick(ActionEvent event) {
 
+    @FXML
+    void createReviewButtonClick(ActionEvent event) throws IOException, ClassNotFoundException {
+        reviewPane.setVisible(false);
+        restaurantNameText.setText("Write a review for "+currentRestaurant.getName());
+        CustomerDAO customerDAO = new CustomerDAO();
+        ObservableList<Restaurant> observableRestaurants = FXCollections.observableArrayList(customerDAO.readAll());
+        customerDropdown.setItems(observableRestaurants);
+        createReviewPane.setVisible(true);
     }
 
     @FXML
@@ -114,7 +128,7 @@ public class MainMenuController {
 
     @FXML
     void exitReviewClick(ActionEvent event) {
-
+        createReviewPane.setVisible(false);
     }
 
     @FXML
@@ -142,7 +156,7 @@ public class MainMenuController {
     @FXML
     void restaurantButtonClick(ActionEvent event) throws IOException, ClassNotFoundException {
         ReviewDAO reviewDAO = new ReviewDAO();
-        Restaurant restaurant = reviewBox.getSelectionModel().getSelectedItem();
+        currentRestaurant = reviewBox.getSelectionModel().getSelectedItem();
         reviewPane.setVisible(true);
         List<Review> reviewList = new ArrayList<Review>();
         reviewList.addAll(reviewDAO.readAllFrom(reviewBox.getSelectionModel().getSelectedItem()));

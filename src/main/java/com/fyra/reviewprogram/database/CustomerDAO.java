@@ -30,6 +30,7 @@ public class CustomerDAO implements DAO {
         return customers;
     }
 
+
     @Override
     public void create(Object o) throws IOException, ClassNotFoundException {
      Data data = new Data();
