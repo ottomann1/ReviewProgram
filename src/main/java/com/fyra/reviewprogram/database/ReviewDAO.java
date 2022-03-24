@@ -46,7 +46,7 @@ public class ReviewDAO implements DAO{
     Review x = (Review) o;
         data.deleteEm(Review.class, x.getReviewId());
     }
-    @Override
+
     public List readAllFrom(Restaurant restaurant) throws IOException, ClassNotFoundException {
         Data data = new Data();
         List<Object[]> reviewObjects = data.getDataListQuery("SELECT * FROM review WHERE restaurant_id = "+restaurant.getRestaurantId());
@@ -57,8 +57,6 @@ public class ReviewDAO implements DAO{
         }
         return reviews;
     }
-
-
 
     @Override
     public void deleteAll() throws IOException {
