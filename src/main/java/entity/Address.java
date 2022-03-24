@@ -24,13 +24,11 @@ public class Address {
 
     @Override
     public String toString() {
-        return "Address{" +
-                "addressId=" + addressId +
-                ", streetName='" + streetName + '\'' +
-                ", streetNumber=" + streetNumber +
-                ", postalNumber='" + postalNumber + '\'' +
-                ", city='" + city + '\'' +
-                '}';
+        return "ID: " + addressId +
+                "\n Street name: " + streetName + '\'' +
+                "\n Street number: " + streetNumber +
+                "\n Postal number: " + postalNumber + '\'' +
+                "\n City: " + city;
     }
 
     public Address() {

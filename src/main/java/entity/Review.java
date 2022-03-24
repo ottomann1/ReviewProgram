@@ -28,13 +28,11 @@ public class Review {
     }
 
     public String toStringHeavy() {
-        return "Review{" +
-                "reviewId=" + reviewId +
-                ", customerId=" + customerId +
-                ", restaurantId=" + restaurantId +
-                ", stars=" + stars +
-                ", reviewText='" + reviewText + '\'' +
-                '}';
+        return "ID: " + reviewId +
+                "\n Customer: " + customerId +
+                "\n Restaurant: " + restaurantId +
+                "\n Stars: " + stars +
+                "\n Text: " + reviewText;
     }
 
     public Review() {

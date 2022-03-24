@@ -38,13 +38,11 @@ public class Customer {
     }
 
     public String toStringHeavy() {
-        return "Customer{" +
-                "customerId=" + customerId +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", emailAddress='" + emailAddress + '\'' +
-                '}';
+        return "ID: " + customerId +
+                "\n First name: " + firstName + '\'' +
+                "\n Last name: " + lastName + '\'' +
+                "\n Phone number: " + phoneNumber + '\'' +
+                "\n E-mail address: " + emailAddress;
     }
 
     public int getCustomerId() {

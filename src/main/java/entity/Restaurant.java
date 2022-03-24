@@ -25,12 +25,10 @@ public class Restaurant {
     }
 
     public String toStringHeavy() {
-        return "Restaurant{" +
-                "restaurantId=" + restaurantId +
-                ", restaurantName='" + restaurantName + '\'' +
-                ", addressId=" + addressId +
-                ", restaurantDescription='" + restaurantDescription + '\'' +
-                '}';
+        return "ID: " + restaurantId +
+                "\n Name: " + restaurantName + '\'' +
+                "\n Address: " + addressId +
+                "\n Description: " + restaurantDescription;
     }
 
     public Restaurant() {
