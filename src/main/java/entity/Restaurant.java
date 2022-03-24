@@ -19,6 +19,20 @@ public class Restaurant {
     @Column(name = "restaurantDescription")
     private String restaurantDescription;
 
+    @Override
+    public String toString() {
+        return restaurantName +" - " +restaurantDescription;
+    }
+
+    public String toStringHeavy() {
+        return "Restaurant{" +
+                "restaurantId=" + restaurantId +
+                ", restaurantName='" + restaurantName + '\'' +
+                ", addressId=" + addressId +
+                ", restaurantDescription='" + restaurantDescription + '\'' +
+                '}';
+    }
+
     public Restaurant() {
     }
 

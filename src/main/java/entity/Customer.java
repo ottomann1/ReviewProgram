@@ -34,6 +34,10 @@ public class Customer {
 
     @Override
     public String toString() {
+        return firstName + " " + lastName + " - e-mail: "+emailAddress;
+    }
+
+    public String toStringHeavy() {
         return "Customer{" +
                 "customerId=" + customerId +
                 ", firstName='" + firstName + '\'' +

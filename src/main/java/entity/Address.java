@@ -22,6 +22,17 @@ public class Address {
     @Column(name = "city")
     private String city;
 
+    @Override
+    public String toString() {
+        return "Address{" +
+                "addressId=" + addressId +
+                ", streetName='" + streetName + '\'' +
+                ", streetNumber=" + streetNumber +
+                ", postalNumber='" + postalNumber + '\'' +
+                ", city='" + city + '\'' +
+                '}';
+    }
+
     public Address() {
     }
 

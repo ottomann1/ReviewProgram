@@ -22,6 +22,11 @@ public class Review {
     @Column(name = "reviewText")
     private String reviewText;
 
+    @Override
+    public String toString() {
+        return stars +" Stars - "+ reviewText;
+    }
+
     public Review() {
     }
 
