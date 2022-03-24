@@ -203,6 +203,9 @@ public class MainMenuController {
         ReviewDAO reviewDAO = new ReviewDAO();
         currentRestaurant = reviewBox.getSelectionModel().getSelectedItem();
         reviewPane.setVisible(true);
+        createReviewPane.setVisible(false);
+        createCustomerPane.setVisible(false);
+        moreInfoPane.setVisible(false);
         List<Review> reviewList = new ArrayList<Review>();
         reviewList.addAll(reviewDAO.readAllFrom(reviewBox.getSelectionModel().getSelectedItem()));
         ObservableList<Review> observableReviewList = (ObservableList<Review>) FXCollections.observableArrayList(reviewList);
