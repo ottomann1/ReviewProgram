@@ -7,6 +7,7 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -14,46 +15,88 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="621.0" prefWidth="858.0" style="-fx-background-color: #FF009E;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fyra.reviewprogram.MainMenuController">
    <children>
-      <Button layoutX="22.0" layoutY="587.0" mnemonicParsing="false" onAction="#restaurantButtonClick" prefHeight="25.0" prefWidth="228.0" style="-fx-background-color: #A6FF00;" text="Load restaurant" />
-      <ListView fx:id="reviewBox" layoutX="22.0" layoutY="68.0" prefHeight="519.0" prefWidth="228.0" style="-fx-background-color: #00FF80;" />
+      <Button layoutX="22.0" layoutY="587.0" mnemonicParsing="false" onAction="#restaurantButtonClick" prefHeight="25.0" prefWidth="228.0" style="-fx-background-color: #A6FF00; -fx-background-radius: 10;" text="Load restaurant">
+         <font>
+            <Font name="Comic Sans MS" size="13.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect></Button>
+      <ListView fx:id="reviewBox" layoutX="22.0" layoutY="68.0" prefHeight="519.0" prefWidth="228.0" style="-fx-background-color: #00FF80; -fx-background-radius: 20;" />
       <Text layoutX="22.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Restaurants" textAlignment="CENTER" wrappingWidth="228.0">
          <font>
-            <Font size="43.0" />
+            <Font name="Comic Sans MS" size="38.0" />
          </font>
       </Text>
       <Pane fx:id="reviewPane" focusTraversable="true" layoutX="252.0" layoutY="-6.0" prefHeight="630.0" prefWidth="606.0" style="-fx-background-color: #00F7FF;" visible="false">
          <children>
-            <ListView fx:id="reviewsListView" layoutX="15.0" layoutY="67.0" prefHeight="452.0" prefWidth="565.0" style="-fx-background-color: #FFAA00;" />
-            <Button layoutX="419.0" layoutY="525.0" mnemonicParsing="false" onAction="#exitReviewClick" prefHeight="82.0" prefWidth="161.0" style="-fx-background-color: #FF0000;" text="Exit" />
-            <Button layoutX="15.0" layoutY="525.0" mnemonicParsing="false" onAction="#moreInfoButtonClick" prefHeight="82.0" prefWidth="200.0" style="-fx-background-color: #0CFF00;" text="More Info" />
-            <Button layoutX="221.0" layoutY="525.0" mnemonicParsing="false" onAction="#createReviewButtonClick" prefHeight="82.0" prefWidth="193.0" style="-fx-background-color: #0CFF00;" text="Create Review" />
+            <ListView fx:id="reviewsListView" layoutX="15.0" layoutY="67.0" prefHeight="452.0" prefWidth="565.0" style="-fx-background-color: #FFAA00; -fx-background-radius: 20;" />
+            <Button layoutX="419.0" layoutY="525.0" mnemonicParsing="false" onAction="#exitReviewClick" prefHeight="82.0" prefWidth="161.0" style="-fx-background-color: #FF0000; -fx-background-radius: 20;" text="Exit">
+               <font>
+                  <Font name="Comic Sans MS" size="25.0" />
+               </font>
+               <effect>
+                  <InnerShadow height="44.72" radius="21.86" width="44.72" />
+               </effect></Button>
+            <Button layoutX="15.0" layoutY="525.0" mnemonicParsing="false" onAction="#moreInfoButtonClick" prefHeight="82.0" prefWidth="200.0" style="-fx-background-color: #0CFF00; -fx-background-radius: 20;" text="More Info">
+               <effect>
+                  <InnerShadow height="44.72" radius="21.86" width="44.72" />
+               </effect>
+               <font>
+                  <Font name="Comic Sans MS" size="25.0" />
+               </font></Button>
+            <Button layoutX="221.0" layoutY="525.0" mnemonicParsing="false" onAction="#createReviewButtonClick" prefHeight="82.0" prefWidth="193.0" style="-fx-background-color: #0CFF00; -fx-background-radius: 20;" text="Create Review">
+               <font>
+                  <Font name="Comic Sans MS" size="24.0" />
+               </font>
+               <effect>
+                  <InnerShadow height="44.72" radius="21.86" width="44.72" />
+               </effect></Button>
             <Label fx:id="reviewsForText" layoutX="14.0" layoutY="9.0" maxHeight="58.0" maxWidth="565.0" prefHeight="58.0" prefWidth="565.0" text="Label" textAlignment="CENTER">
                <font>
-                  <Font size="40.0" />
+                  <Font name="Comic Sans MS" size="40.0" />
                </font>
             </Label>
          </children>
       </Pane>
       <Pane fx:id="createReviewPane" layoutX="250.0" prefHeight="621.0" prefWidth="613.0" style="-fx-background-color: #FF00E4;" visible="false">
          <children>
-            <TextField fx:id="reviewTextField" alignment="TOP_LEFT" layoutX="37.0" layoutY="70.0" prefHeight="310.0" prefWidth="532.0" promptText="Write your review here" style="-fx-background-color: #FFF700;" />
+            <TextField fx:id="reviewTextField" alignment="TOP_LEFT" layoutX="37.0" layoutY="70.0" prefHeight="310.0" prefWidth="532.0" promptText="Write your review here" style="-fx-background-color: #FFF700; -fx-background-radius: 20;" />
             <CheckBox fx:id="oneStar" layoutX="157.0" layoutY="389.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="59.0" style="-fx-background-color: #FFF700;" text="1 Star" />
             <CheckBox fx:id="twoStar" layoutX="217.0" layoutY="389.0" mnemonicParsing="false" style="-fx-background-color: #FFF700;" text="2 Star" />
             <CheckBox fx:id="threeStar" layoutX="276.0" layoutY="389.0" mnemonicParsing="false" style="-fx-background-color: #FFF700;" text="3 Star" />
             <CheckBox fx:id="fourStar" layoutX="330.0" layoutY="389.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="59.0" style="-fx-background-color: #FFF700;" text="4 Star" />
             <CheckBox fx:id="fiveStar" layoutX="389.0" layoutY="389.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="59.0" style="-fx-background-color: #FFF700;" text="5 Star" />
-            <Button layoutX="37.0" layoutY="520.0" mnemonicParsing="false" onAction="#submitReviewClick" prefHeight="82.0" prefWidth="209.0" style="-fx-background-color: #FFF700;" text="Submit Review" />
-            <Button layoutX="330.0" layoutY="520.0" mnemonicParsing="false" onAction="#exitReviewClick" prefHeight="82.0" prefWidth="237.0" style="-fx-background-color: #FF0000;" text="Exit" />
+            <Button layoutX="37.0" layoutY="520.0" mnemonicParsing="false" onAction="#submitReviewClick" prefHeight="82.0" prefWidth="209.0" style="-fx-background-color: #FFF700; -fx-background-radius: 20;" text="Submit Review">
+               <font>
+                  <Font name="Comic Sans MS" size="25.0" />
+               </font>
+               <effect>
+                  <InnerShadow height="44.72" radius="21.86" width="44.72" />
+               </effect></Button>
+            <Button layoutX="330.0" layoutY="520.0" mnemonicParsing="false" onAction="#exitReviewClick" prefHeight="82.0" prefWidth="237.0" style="-fx-background-color: #FF0000; -fx-background-radius: 20;" text="Exit">
+               <effect>
+                  <InnerShadow height="44.72" radius="21.86" width="44.72" />
+               </effect>
+               <font>
+                  <Font name="Comic Sans MS" size="25.0" />
+               </font></Button>
             <ComboBox fx:id="customerDropdown" layoutX="154.0" layoutY="437.0" prefHeight="25.0" prefWidth="412.0" promptText="Select your name" />
             <Text layoutX="53.0" layoutY="457.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer:" wrappingWidth="88.13671875">
                <font>
                   <Font size="19.0" />
                </font>
             </Text>
-            <Button layoutX="154.0" layoutY="476.0" mnemonicParsing="false" onAction="#createCustomerPaneClick" prefHeight="25.0" prefWidth="412.0" style="-fx-background-color: #17FF00;" text="Create customer" />
+            <Button layoutX="154.0" layoutY="476.0" mnemonicParsing="false" onAction="#createCustomerPaneClick" prefHeight="25.0" prefWidth="412.0" style="-fx-background-color: #17FF00; -fx-background-radius: 10;" text="Create customer">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+               <effect>
+                  <InnerShadow />
+               </effect></Button>
             <Label fx:id="restaurantNameText" layoutX="37.0" layoutY="14.0" maxHeight="56.0" maxWidth="532.0" prefHeight="56.0" prefWidth="532.0" text="Label" textFill="#f2ff00">
                <font>
-                  <Font size="40.0" />
+                  <Font name="Comic Sans MS" size="40.0" />
                </font>
             </Label>
          </children>
@@ -66,12 +109,12 @@
             <TextField fx:id="phoneNumberTextField" layoutX="70.0" layoutY="370.0" prefHeight="25.0" prefWidth="467.0" />
             <Text fill="WHITE" layoutX="170.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Customer">
                <font>
-                  <Font size="36.0" />
+                  <Font name="Comic Sans MS" size="39.0" />
                </font>
             </Text>
             <Text fill="WHITE" layoutX="239.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name">
                <font>
-                  <Font size="27.0" />
+                  <Font name="Comic Sans MS" size="27.0" />
                </font>
             </Text>
             <Text fill="WHITE" layoutX="239.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name">
@@ -89,42 +132,60 @@
                   <Font size="27.0" />
                </font>
             </Text>
-            <Button layoutX="70.0" layoutY="441.0" mnemonicParsing="false" onAction="#createCustomerClick" prefHeight="56.0" prefWidth="167.0" style="-fx-background-color: GREEN;" text="Create Customer" />
-            <Button layoutX="411.0" layoutY="441.0" mnemonicParsing="false" onAction="#exitCustomerCreateClick" prefHeight="57.0" prefWidth="126.0" style="-fx-background-color: RED;" text="Exit" />
+            <Button layoutX="70.0" layoutY="441.0" mnemonicParsing="false" onAction="#createCustomerClick" prefHeight="56.0" prefWidth="167.0" style="-fx-background-color: GREEN; -fx-background-radius: 20;" text="Create Customer">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font>
+               <effect>
+                  <InnerShadow />
+               </effect></Button>
+            <Button layoutX="411.0" layoutY="441.0" mnemonicParsing="false" onAction="#exitCustomerCreateClick" prefHeight="57.0" prefWidth="126.0" style="-fx-background-color: RED; -fx-background-radius: 20;" text="Exit">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font>
+               <effect>
+                  <InnerShadow />
+               </effect></Button>
          </children>
       </Pane>
-      <Pane fx:id="moreInfoPane" layoutX="252.0" layoutY="-1.0" prefHeight="621.0" prefWidth="606.0" style="-fx-background-color: #BD00FF;" visible="false">
+      <Pane fx:id="moreInfoPane" layoutX="252.0" layoutY="-1.0" prefHeight="621.0" prefWidth="606.0" style="-fx-background-color: #BD00FF;">
          <children>
-            <TextArea fx:id="moreInfoRestaurantText" layoutX="14.0" layoutY="84.0" prefHeight="228.0" prefWidth="278.0" />
+            <TextArea fx:id="moreInfoRestaurantText" layoutX="14.0" layoutY="84.0" prefHeight="228.0" prefWidth="278.0" style="-fx-background-radius: 20;" />
             <TextArea fx:id="moreInfoReviewText" layoutX="314.0" layoutY="84.0" prefHeight="228.0" prefWidth="278.0" />
             <TextArea fx:id="moreInfoAddressText" layoutX="14.0" layoutY="357.0" prefHeight="228.0" prefWidth="278.0" />
             <TextArea fx:id="moreInfoCustomerText" layoutX="314.0" layoutY="357.0" prefHeight="228.0" prefWidth="278.0" />
             <Text fx:id="moreInfoText" layoutX="242.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="More info for " textAlignment="CENTER">
                <font>
-                  <Font size="20.0" />
+                  <Font name="Comic Sans MS" size="20.0" />
                </font>
             </Text>
             <Text layoutX="75.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Restaurant">
                <font>
-                  <Font size="33.0" />
+                  <Font name="Comic Sans MS" size="33.0" />
                </font>
             </Text>
             <Text layoutX="401.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Review">
                <font>
-                  <Font size="33.0" />
+                  <Font name="Comic Sans MS" size="33.0" />
                </font>
             </Text>
             <Text layoutX="382.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer">
                <font>
-                  <Font size="33.0" />
+                  <Font name="Comic Sans MS" size="33.0" />
                </font>
             </Text>
             <Text layoutX="94.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address">
                <font>
-                  <Font size="33.0" />
+                  <Font name="Comic Sans MS" size="33.0" />
                </font>
             </Text>
-            <Button layoutX="14.0" layoutY="583.0" mnemonicParsing="false" onAction="#exitMoreInfoClick" prefHeight="36.0" prefWidth="579.0" style="-fx-background-color: RED;" text="Exit" />
+            <Button layoutX="14.0" layoutY="583.0" mnemonicParsing="false" onAction="#exitMoreInfoClick" prefHeight="36.0" prefWidth="579.0" style="-fx-background-color: RED; -fx-background-radius: 10;" text="Exit">
+               <font>
+                  <Font name="Comic Sans MS" size="17.0" />
+               </font>
+               <effect>
+                  <InnerShadow />
+               </effect></Button>
          </children>
       </Pane>
    </children>
