@@ -119,17 +119,17 @@
             </Text>
             <Text fill="WHITE" layoutX="239.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name">
                <font>
-                  <Font size="27.0" />
+                  <Font name="Comic Sans MS" size="27.0" />
                </font>
             </Text>
             <Text fill="WHITE" layoutX="211.0" layoutY="362.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number">
                <font>
-                  <Font size="27.0" />
+                  <Font name="Comic Sans MS" size="27.0" />
                </font>
             </Text>
             <Text fill="WHITE" layoutX="220.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email Address">
                <font>
-                  <Font size="27.0" />
+                  <Font name="Comic Sans MS" size="27.0" />
                </font>
             </Text>
             <Button layoutX="70.0" layoutY="441.0" mnemonicParsing="false" onAction="#createCustomerClick" prefHeight="56.0" prefWidth="167.0" style="-fx-background-color: GREEN; -fx-background-radius: 20;" text="Create Customer">
